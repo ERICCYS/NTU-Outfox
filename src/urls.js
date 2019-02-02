@@ -6,6 +6,7 @@ import RouteWrapper from "./routes/RouteWrapper";
 import PageNotFound from "./components/common/app/PageNotFound";
 import HomeApp from "./components/home/index";
 import CanteenApp from "./components/canteen/index";
+import ReportApp from './components/report/index'
 import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "./components/common/app/Header";
 
@@ -36,6 +37,7 @@ const RootRouter = ({classes}) => (
                 <Switch>
                     {RouteWrapper({path: '/', exact: true, component: HomeApp})}
                     {RouteWrapper({path: '/canteen', component: CanteenApp})}
+                    {RouteWrapper({path: '/report', component: ReportApp})}
                     {RouteWrapper({component: PageNotFound})}
                 </Switch>
             </main>
