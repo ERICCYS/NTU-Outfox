@@ -1,49 +1,51 @@
 import React from 'react';
-import Switch from 'react-router-dom/Switch';
-import ReactRouter from "react-router-dom/Router";
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import RouteWrapper from "./routes/RouteWrapper";
-import PageNotFound from "./components/common/app/PageNotFound";
-import HomeApp from "./components/home/index";
-import EventApp from "./components/event/index";
-import CanteenApp from "./components/canteen/index";
-import ReportApp from './components/report/index'
-import withStyles from "@material-ui/core/styles/withStyles";
-import Header from "./components/common/app/Header";
-import Footer from "./components/common/app/Footer";
+import RouteWrapper from './routes/RouteWrapper';
+import PageNotFound from './components/common/app/PageNotFound';
+import HomeApp from './components/Home/';
+import EventApp from './components/Event/';
+import CanteenApp from './components/Canteen/';
+import ReportApp from './components/Report/';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Header from './components/common/app/Header';
+import Footer from './components/common/app/Footer';
 
 const history = createBrowserHistory();
 
 const classes = theme => ({
-    root: {
-        display: 'flex',
-        flexDirection: "column",
-        minHeight: "100%",
-    },
-    content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
-        padding: theme.spacing.unit * 3,
-        minWidth: 0,
-        minHeight: "100%",
-    },
-    toolbar: theme.mixins.toolbar,
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		minHeight: '100%'
+	},
+	content: {
+		flexGrow: 1,
+		backgroundColor: theme.palette.background.default,
+		padding: theme.spacing.unit * 3,
+		minWidth: 0,
+		minHeight: '100%'
+	},
+	toolbar: theme.mixins.toolbar
 });
 
-const RootRouter = ({classes}) => (
-    <ReactRouter history={history}> 
-        <div className={classes.root}>
-            <Header/>
-            <main className={classes.content}>
-                <div className={classes.toolbar}/>
-                <Switch>
-                    {RouteWrapper({path: '/', exact: true, component: HomeApp})}
-                    {RouteWrapper({component: PageNotFound})}
-                </Switch>
-            </main>
-            <Footer/>
-        </div>
-    </ReactRouter>
+const RootRouter = ({ classes }) => (
+	<Router>
+		<div className={classes.root}>
+			<Header />
+			<main className={classes.content}>
+				<div className={classes.toolbar} />
+				<Switch>
+					<Route exact path="/" component={HomeApp} />
+					<Route path="/events" component={EventApp} />
+					<Route path="/report" component={ReportApp} />
+					<Route path="/canteen" component={CanteenApp} />
+					<Route component={PageNotFound} />
+				</Switch>
+			</main>
+			<Footer />
+		</div>
+	</Router>
 );
 
 export default withStyles(classes)(RootRouter);
