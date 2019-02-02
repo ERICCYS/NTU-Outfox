@@ -33,32 +33,6 @@ const styles = theme => ({
   flooded: {
     color: 'rgba(255, 0, 0, 0.54)',
   }
-//   icon: {
-//     color: 'rgba(0, 255, 0, 0.54)',
-//   },
-//   icon: {
-//     color: 'rgba(0, 255, 0, 0.54)',
-//   },
-});
-
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const counters = [
- *   {
- *     img: '',
- *     name: '',
- *     style: '',
- *     status: ''
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
 
 const ConditionalIcon = ((props) => {
     const { classes,canteenStatus, status } = props;

@@ -1,24 +1,29 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Main from "./cards";
+import { Typography } from '@material-ui/core/es';
 
 const styles = () => ({
     root: {
         flexGrow: 1,
-    },
+	},
+	title: {
+		textAlign: 'center',
+	}
 });
 
-const HomeApp = ({classes}) => {  
+const BusApp = ({classes}) => {  
     return (
         <div className={classes.root}>
-            <Main/>
+			<div className={classes.title}>
+				<Typography variant="h2">Welcome to take NTU Shuttle Bus!</Typography>
+			</div>
         </div>
     );
-};
 
-HomeApp.propTypes = {
+BusApp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HomeApp);
+export default withStyles(styles)(BusApp);
+
