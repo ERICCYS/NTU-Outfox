@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+
 import RouteWrapper from './routes/RouteWrapper';
 import PageNotFound from './components/common/app/PageNotFound';
 import HomeApp from './components/home/';

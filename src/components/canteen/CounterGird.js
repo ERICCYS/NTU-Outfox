@@ -33,7 +33,6 @@ const styles = theme => ({
   flooded: {
     color: 'rgba(255, 0, 0, 0.54)',
   }
-});
 
 const ConditionalIcon = ((props) => {
     const { classes,canteenStatus, status } = props;
