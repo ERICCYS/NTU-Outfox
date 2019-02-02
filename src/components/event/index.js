@@ -14,22 +14,25 @@ const styles = () => ({
     },
 });
 
-const displayEvents = () => {
-    let events = []
-    console.log(eventInfo)
-    
-    return events
-}
 
-const EventApp = ({classes}) => {
-    return (
-        <div className={classes.root}>
-          <div>
-              {displayEvents()}
-          </div>
-        </div>
-    );
-};
+const EventApp = ({ classes }) => {
+  return (
+   <div className={classes.root}>
+    <div>
+     {eventInfo.map(event => (
+      <EventCard
+       key={event.title}
+       abbr={event.abbr}
+       title={event.title}
+       subheader={event.subheader}
+       brief={event.brief}
+       description={event.description}
+      />
+     ))}
+    </div>
+   </div>
+  );
+ };
 
 EventApp.propTypes = {
     classes: PropTypes.object.isRequired,

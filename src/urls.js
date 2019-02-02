@@ -38,6 +38,7 @@ const RootRouter = ({classes}) => (
                 <div className={classes.toolbar}/>
                 <Switch>
                     {RouteWrapper({path: '/', exact: true, component: HomeApp})}
+                    {RouteWrapper({path: '/events', exact: true, component: EventApp})}
                     {RouteWrapper({component: PageNotFound})}
                 </Switch>
             </main>
