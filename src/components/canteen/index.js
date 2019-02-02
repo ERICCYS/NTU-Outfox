@@ -1,13 +1,10 @@
 import React from 'react';
-import * as ReactDom from "react-dom";
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Footer from "../common/app/Footer";
 import FunctionCard from '../common/FunctionCard'
-import Card from "@material-ui/core/Card";
 import CounterGrid from './CounterGird'
 import canteenInfo from './canteenInfo.json'
- 
+
 
 const styles = () => ({
     root: {
@@ -22,7 +19,7 @@ const styles = () => ({
 });
 
 const displayCanteens = () => {
-    let canteens = []
+    let canteens = [];
     canteenInfo.forEach((canteen) => {
         let children = () => {
             return (
@@ -40,17 +37,17 @@ const displayCanteens = () => {
                 title={`${canteen.name}`}
             />
         )
-    })
+    });
     return canteens
-}
+};
 
-const CanteenApp = ({classes}) => {
-    return (
+const CanteenApp = ({classes}) =>
+    (
         <div className={classes.root}>
             <div className={classes.header}>
                 <h1>Welcome to eat @ NTU</h1>
             </div>
-            <div className={classes.canteens}>
+            <div>
                 <h2>Canteens</h2>
             </div>
             <div>
@@ -58,7 +55,6 @@ const CanteenApp = ({classes}) => {
             </div>
         </div>
     );
-};
 
 CanteenApp.propTypes = {
     classes: PropTypes.object.isRequired,

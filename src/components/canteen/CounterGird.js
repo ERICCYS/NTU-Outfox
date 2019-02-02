@@ -1,106 +1,107 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import classNames from 'classnames';
 
 const styles = theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
-  },
-  gridList: {
-    width: '95%',
-    height: 450,
-  },
-  normal: {
-    color: 'rgba(0, 255, 0, 0.54)',
-  },
-  closed: {
-    color: 'rgba(255, 255, 255, 0.54)',
-  },
-  crowded: {
-    color: 'rgba(255, 255, 0, 0.54)',
-  },
-  flooded: {
-    color: 'rgba(255, 0, 0, 0.54)',
-  }
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+        backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+        width: '95%',
+        height: 450,
+    },
+    normal: {
+        color: 'rgba(0, 255, 0, 0.54)',
+    },
+    closed: {
+        color: 'rgba(255, 255, 255, 0.54)',
+    },
+    crowded: {
+        color: 'rgba(255, 255, 0, 0.54)',
+    },
+    flooded: {
+        color: 'rgba(255, 0, 0, 0.54)',
+    }
+});
 
 const ConditionalIcon = ((props) => {
-    const { classes,canteenStatus, status } = props;
+    const {classes, canteenStatus, status} = props;
 
-    if (canteenStatus=="closed") {
+    if (canteenStatus == "closed") {
         return (
             <IconButton className={classes.closed}>
-                <InfoIcon />
+                <InfoIcon/>
             </IconButton>
         )
     } else {
-        if (status=="normal") {
+        if (status == "normal") {
             return (
                 <IconButton className={classes.normal}>
-                    <InfoIcon />
+                    <InfoIcon/>
                 </IconButton>
             )
-            
-        } else if (status=="crowded") {
+
+        } else if (status == "crowded") {
             return (
                 <IconButton className={classes.crowded}>
-                    <InfoIcon />
+                    <InfoIcon/>
                 </IconButton>
             )
-            
+
         } else {
             return (
                 <IconButton className={classes.flooded}>
-                    <InfoIcon />
+                    <InfoIcon/>
                 </IconButton>
             )
         }
     }
 })
 
-const TitlebarGridList = (({ classes, counters, canteenStatus }) => {
+const TitlebarGridList = (({classes, counters, canteenStatus}) => {
     console.log(canteenStatus)
     return (
-    <div className={classes.root}>
-        <GridList cellHeight={240} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto'}}>
-            <ListSubheader style={ {padding: '0px', fontSize: '20px'}} component="div">Canteen Status: {canteenStatus}</ListSubheader>
-        </GridListTile>
-        {counters.map((counter) => (
-            <GridListTile key={counter.img} cols={0.66} >
-                <img src={counter.img} alt={counter.name} />
-                <GridListTileBar
-                    title={counter.name}
-                    subtitle={<span>Style: {counter.style}</span>}
-                    actionIcon={
-                        <ConditionalIcon 
-                            canteenStatus={canteenStatus}
-                            status={counter.status}
-                            classes={classes}
+        <div className={classes.root}>
+            <GridList cellHeight={240} className={classes.gridList}>
+                <GridListTile key="Subheader" cols={2} style={{height: 'auto'}}>
+                    <ListSubheader style={{padding: '0px', fontSize: '20px'}} component="div">Canteen
+                        Status: {canteenStatus}</ListSubheader>
+                </GridListTile>
+                {counters.map((counter) => (
+                    <GridListTile key={counter.img} cols={0.66}>
+                        <img src={counter.img} alt={counter.name}/>
+                        <GridListTileBar
+                            title={counter.name}
+                            subtitle={<span>Style: {counter.style}</span>}
+                            actionIcon={
+                                <ConditionalIcon
+                                    canteenStatus={canteenStatus}
+                                    status={counter.status}
+                                    classes={classes}
+                                />
+                            }
                         />
-                    }
-                />
-            </GridListTile>
-        ))}
-        </GridList>
-    </div>
+                    </GridListTile>
+                ))}
+            </GridList>
+        </div>
     );
 });
 
 TitlebarGridList.propTypes = {
-  classes: PropTypes.object.isRequired,
-  description: PropTypes.string,
-  counters: PropTypes.object
+    classes: PropTypes.object.isRequired,
+    description: PropTypes.string,
+    counters: PropTypes.object
 };
 
 export default withStyles(styles)(TitlebarGridList);
