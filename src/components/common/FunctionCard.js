@@ -9,7 +9,8 @@ import CardMenu from "./CardMenu";
 
 const styles = {
     root: {
-        boxShadow: 'inherit'
+        boxShadow: 'inherit',
+        marginBottom: 20
     },
 };
 
