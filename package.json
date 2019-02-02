@@ -11,6 +11,7 @@
     "@types/react-dom": "latest",
     "bootstrap": "^4.2.1",
     "classnames": "latest",
+    "got": "^9.6.0",
     "history": "latest",
     "jss": "next",
     "jss-nested": "latest",

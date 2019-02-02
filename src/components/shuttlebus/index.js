@@ -30,7 +30,6 @@ const getColorBus = async bus => {
 };
 
 // publicBus.js
-const got = require('got');
 
 const findLoad = input => {
 	if (input === 'SEA') return 'empty';
@@ -79,3 +78,5 @@ const getTextBus = async bus => {
 	}
 	return comingBus;
 };
+
+export default null;

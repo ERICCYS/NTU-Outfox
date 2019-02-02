@@ -1,17 +1,16 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-import RouteWrapper from './routes/RouteWrapper';
-import PageNotFound from './components/common/app/PageNotFound';
-import HomeApp from './components/Home/';
-import EventApp from './components/Event/';
-import CanteenApp from './components/Canteen/';
-import ReportApp from './components/Report/';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Header from './components/common/app/Header';
-import Footer from './components/common/app/Footer';
 
-const history = createBrowserHistory();
+import HomeApp from '../components/Home';
+import EventApp from '../components/Event';
+import CanteenApp from '../components/Canteen';
+import BusApp from '../components/ShuttleBus';
+import ReportApp from '../components/Report';
+import PageNotFound from '../components/common/app/PageNotFound';
+
+import Header from '../components/common/app/Header';
+import Footer from '../components/common/app/Footer';
 
 const classes = theme => ({
 	root: {
@@ -40,6 +39,7 @@ const RootRouter = ({ classes }) => (
 					<Route path="/events" component={EventApp} />
 					<Route path="/report" component={ReportApp} />
 					<Route path="/canteen" component={CanteenApp} />
+					<Route path="/bus" component={BusApp} />
 					<Route component={PageNotFound} />
 				</Switch>
 			</main>
