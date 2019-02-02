@@ -5,10 +5,12 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import RouteWrapper from "./routes/RouteWrapper";
 import PageNotFound from "./components/common/app/PageNotFound";
 import HomeApp from "./components/home/index";
+import EventApp from "./components/event/index";
 import CanteenApp from "./components/canteen/index";
 import ReportApp from './components/report/index'
 import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "./components/common/app/Header";
+import Footer from "./components/common/app/Footer";
 
 const history = createBrowserHistory();
 
@@ -29,19 +31,17 @@ const classes = theme => ({
 });
 
 const RootRouter = ({classes}) => (
-    <ReactRouter history={history}>
+    <ReactRouter history={history}> 
         <div className={classes.root}>
             <Header/>
             <main className={classes.content}>
                 <div className={classes.toolbar}/>
                 <Switch>
                     {RouteWrapper({path: '/', exact: true, component: HomeApp})}
-                    {RouteWrapper({path: '/canteen', component: CanteenApp})}
-                    {RouteWrapper({path: '/report', component: ReportApp})}
                     {RouteWrapper({component: PageNotFound})}
                 </Switch>
             </main>
-            <div id="hysia-footer-container"/>
+            <Footer/>
         </div>
     </ReactRouter>
 );

@@ -1,8 +1,7 @@
 import React from 'react';
-import * as ReactDom from "react-dom";
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Footer from "../common/app/Footer";
+import Main from "./cards";
 
 const styles = () => ({
     root: {
@@ -10,13 +9,10 @@ const styles = () => ({
     },
 });
 
-const HomeApp = ({classes}) => {
-    const footer = document.getElementById("outfox-footer-container");
-    if (footer)
-        ReactDom.createPortal(<Footer/>, footer);
-
+const HomeApp = ({classes}) => {  
     return (
         <div className={classes.root}>
+            <Main/>
         </div>
     );
 };

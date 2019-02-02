@@ -16,26 +16,17 @@ const styles = () => ({
 
 const displayEvents = () => {
     let events = []
-    eventInfo.forEach((event) => {
-        events.push(
-            <EventCard 
-              abbr={event.abbr}
-              title={event.title}
-              subheader={event.subheader}
-              brief={event.brief}
-              description={event.description}
-            />
-        )
-    })
+    console.log(eventInfo)
+    
     return events
 }
 
 const EventApp = ({classes}) => {
     return (
         <div className={classes.root}>
-            <div>
-                {displayEvents()}
-            </div>
+          <div>
+              {displayEvents()}
+          </div>
         </div>
     );
 };
