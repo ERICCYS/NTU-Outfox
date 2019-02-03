@@ -80,7 +80,7 @@ const Sidebar = ({classes, on, theme, handleClose}) => (
             <Divider/>
             <ListItem button key={"Feedback"}
                       component={props => <Link to={'/feedback'} {...props} />}
-                      onClick={handleClose}
+                      onClick="window.open('https://itunes.apple.com/sg/app/ntu-go/id1004510295?mt=8')"
             >
                 <i className="fas fa-exclamation-triangle"/>
                 <ListItemText primary={"Report"}>
