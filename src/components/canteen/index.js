@@ -1,10 +1,14 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
+import Typography from '@material-ui/core/Typography';
+import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import FunctionCard from '../common/FunctionCard'
 import CounterGrid from './CounterGird'
+import CounterCard from './CounterCard'
 import canteenInfo from './canteenInfo.json'
-
+import recentViewed from './recentViewed.json'
+import popular from './popular.json'
 
 const styles = () => ({
     root: {
@@ -13,8 +17,8 @@ const styles = () => ({
     header: {
         textAlign: 'center',
     },
-    canteen_cards: {
-        marginButton: 20,
+    candiv: {
+        marginBottom: 30,
     }
 });
 
@@ -41,20 +45,76 @@ const displayCanteens = () => {
     return canteens
 };
 
-const CanteenApp = ({classes}) =>
-    (
+const displaySearch = () => {
+    return (
+        <div>
+            Search Canteen.
+        </div>
+    )
+}
+
+const displayRecent = () => {
+    let recent = [];
+    canteenInfo.forEach((canteen) => {
+        recent.push(
+            <CounterCard
+                counter={canteen}
+            />
+        )
+    })
+    return recent;
+}
+
+const displayPopular = () => {
+    let popular = [];
+    canteenInfo.forEach((canteen) => {
+
+    })
+    return popular;
+}
+
+const CanteenApp = ({classes}) => (
         <div className={classes.root}>
             <div className={classes.header}>
-                <h1>Welcome to eat @ NTU</h1>
+                <Typography variant="h3">Welcome to eat @ NTU</Typography>
             </div>
-            <div>
-                <h2>Canteens</h2>
+            <div className={classes.candiv}>
+                <Typography variant="h4">Search cantens</Typography>
             </div>
-            <div>
+            <div className={classes.candiv}>
+                <Typography variant="h4">Recently Viewed Counters</Typography>
+                <Grid className={classes.root} spacing={8} container>
+                {
+                    recentViewed.map((counter, index) => (
+                        <Grid key={index} item>
+                            <CounterCard
+                                counter={counter}
+                            />
+                        </Grid>
+                    ))
+                }
+                </Grid>
+            </div>
+            <div className={classes.candiv}>
+                <Typography variant="h4">Popular Counters</Typography>
+                <Grid className={classes.root} spacing={8} container>
+                {
+                    popular.map((counter, index) => (
+                        <Grid key={index} item>
+                            <CounterCard
+                                counter={counter}
+                            />
+                        </Grid>
+                    ))
+                }
+                </Grid>
+            </div>
+            <div className={classes.candiv}>
+                <Typography variant="h4">All cantens</Typography>
                 {displayCanteens()}
             </div>
         </div>
-    );
+);
 
 CanteenApp.propTypes = {
     classes: PropTypes.object.isRequired,
