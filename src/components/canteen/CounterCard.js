@@ -1,19 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import Button from '../common/Button';
 import Typography from '@material-ui/core/Typography';
 import StatusIcon from './StatusIcon'
 
 const styles = {
     card: {
-        maxWidth: 400,
-        height: 400,
+        minWidth: 310,
+        height: 350,
         margin: 20,
     },
     media: {
@@ -31,12 +31,11 @@ const CounterCard = ({classes, counter}) => {
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {counter.name} @ {counter.canteen}
+                    <Typography gutterBottom variant="subtitle1">
+                        {counter.name}
                     </Typography>
-                    <Typography component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                    <Typography variant="subtitle2">
+                        {counter.canteen}
                     </Typography>
                 </CardContent>
             </CardActionArea>

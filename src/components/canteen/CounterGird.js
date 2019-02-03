@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -69,7 +69,6 @@ const ConditionalIcon = ((props) => {
 });
 
 const TitlebarGridList = (({classes, counters, canteenStatus}) => {
-    console.log(canteenStatus);
     return (
         <div className={classes.root}>
             <GridList cellHeight={240} className={classes.gridList}>
@@ -101,7 +100,7 @@ const TitlebarGridList = (({classes, counters, canteenStatus}) => {
 TitlebarGridList.propTypes = {
     classes: PropTypes.object.isRequired,
     description: PropTypes.string,
-    counters: PropTypes.object
+    counters: PropTypes.array
 };
 
 export default withStyles(styles)(TitlebarGridList);
