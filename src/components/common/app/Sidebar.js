@@ -4,13 +4,10 @@ import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import List from "@material-ui/core/List/List";
 import ListItem from "@material-ui/core/ListItem/ListItem";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const drawerWidth = 240;
 
@@ -49,43 +46,42 @@ const styles = theme => ({
 const Sidebar = ({classes, on, theme, handleClose}) => (
     <Drawer
         className={classes.drawer}
-        variant="persistent"
         anchor="left"
         open={on}
         classes={{paper: classes.drawerPaper}}
+        onClose={handleClose}
     >
         <CssBaseline/>
-        <div className={classes.drawerHeader}>
-            <IconButton onClick={handleClose}>
-                {theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
-            </IconButton>
-        </div>
-        <Divider/>
         <List>
             <ListItem button key={"Events"}
-                      component={props => <Link to={'/events'} {...props} />}>
+                      component={props => <Link to={'/events'} {...props} />}
+                      onClick={handleClose}
+            >
                 <i className="far fa-calendar-check"/>
                 <ListItemText primary={"Events"}>
                 </ListItemText>
             </ListItem>
             <ListItem button key={"Canteen"}
-                      component={props => <Link to={'/canteen'} {...props} />}>
+                      component={props => <Link to={'/canteen'} {...props} />}
+                      onClick={handleClose}
+            >
                 <i className="fas fa-utensils"/>
                 <ListItemText primary={"Canteen"}>
                 </ListItemText>
             </ListItem>
             <ListItem button key={"Shuttlebus"}
                       component={props => <Link to={'/bus'} {...props} />}
+                      onClick={handleClose}
             >
                 <i className="fas fa-bus"/>
                 <ListItemText primary={"Shuttlebus"}>
                 </ListItemText>
             </ListItem>
-        </List>
-        <Divider/>
-        <List>
+            <Divider/>
             <ListItem button key={"Feedback"}
-                      component={props => <Link to={'/feedback'} {...props} />}>
+                      component={props => <Link to={'/feedback'} {...props} />}
+                      onClick={handleClose}
+            >
                 <i className="fas fa-exclamation-triangle"/>
                 <ListItemText primary={"Report"}>
                 </ListItemText>
@@ -100,6 +96,7 @@ Sidebar.defaultProps = {
 
 Sidebar.propTypes = {
     classes: PropTypes.object.isRequired,
+    theme: PropTypes.object.isRequired,
     on: PropTypes.bool,
     handleClose: PropTypes.func,
 };

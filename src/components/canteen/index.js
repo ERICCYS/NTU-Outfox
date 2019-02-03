@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import FunctionCard from '../common/FunctionCard'
 import CounterGrid from './CounterGird'
-import canteenInfo from './canteenInfo.json'
+import canteenInfo from '../../asset/canteenInfo.json'
 
 
 const styles = () => ({
