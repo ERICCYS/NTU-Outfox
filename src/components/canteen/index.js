@@ -5,11 +5,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import FunctionCard from '../common/FunctionCard'
 import CounterGrid from './CounterGird'
 import CounterCard from './CounterCard'
-import recentViewed from './recentViewed.json'
-import popular from './popular.json'
+import recentViewed from '../../asset/recentViewed.json'
+import popular from '../../asset/popular.json'
 import canteenInfo from '../../asset/canteenInfo.json'
 import SearchIcon from '@material-ui/icons/Search';
-import {fade} from '@material-ui/core/styles/colorManipulator';
 import InputBase from '@material-ui/core/InputBase';
 
 const styles = theme => ({
@@ -25,15 +24,15 @@ const styles = theme => ({
     },
     search: {
         position: 'relative',
-        borderRadius: 16,
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: theme.palette.grey[500],
-        transition: [["border-color", "0.1s"]],
+        boxShadow: theme.shadows[1],
+        transition: [["box-shadow", "0.1s"]],
         '&:hover': {
-            boarderColor: fade(theme.palette.common.black, 0.25),
+            boxShadow: theme.shadows[4],
         },
-        marginLeft: "5%",
+        "&:focus": {
+            boxShadow: theme.shadows[3],
+        },
+        marginLeft: "10%",
         width: '80%',
     },
     searchIcon: {
