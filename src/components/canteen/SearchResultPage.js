@@ -15,15 +15,14 @@ import Grid from "@material-ui/core/Grid";
 
 const styles = {
     card: {
-        maxWidth: 345,
+        maxWidth: 400,
+        margin: '2%'
     },
     media: {
         objectFit: 'cover',
     },
     root: {
         width: '100%',
-        maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
     },
       inline: {
         display: 'inline',
@@ -41,89 +40,89 @@ class CanteenCard extends React.Component  {
         const { classes } = this.props;
 
         return(
-            <Grid className={classes.root} spacing={8} container>
-            <Card className={classes.card}>
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Canteen 13 - Tian Yi Dian
-                    </Typography>
-                    <Typography component="p">
-                        Scrumptious Si Chuan mixed rice. They provide both spicy and non-spicy food
-                    </Typography>
-                </CardContent>
-                <CardMedia
-                    component="img"
-                    alt="canteen-picture"
-                    className={classes.media}
-                    height="140"
-                    image="https://www.google.com/search?q=NTU+canteen+13+Tian+Yi+Dian&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiXvY7qyp7gAhXFknAKHeoTAFUQ_AUIDygC&biw=1440&bih=771#imgrc=VYqwo8RQK-ELmM:"
-                    title="canteen-picture"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h6">
-                        Dishes
-                    </Typography>
-                    <List className={classes.root}>
-                        <ListItem alignItems="flex-start">
-                            <CardActionArea  onClick={this.handleClick}>
-                            <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary="西红柿炒鸡蛋"
-                                secondary={
+            <Grid className={classes.root} spacing={24} container>
+                <Card className={classes.card}>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Canteen 13 - Tian Yi Dian
+                        </Typography>
+                        <Typography component="p">
+                            Scrumptious Si Chuan mixed rice. They provide both spicy and non-spicy food
+                        </Typography>
+                    </CardContent>
+                    <CardMedia
+                        component="img"
+                        alt="canteen-picture"
+                        className={classes.media}
+                        height="140"
+                        image="http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_14_1_280x180.png"
+                        title="canteen-picture"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h6">
+                            Dishes
+                        </Typography>
+                        <List className={classes.root}>
+                            <ListItem alignItems="flex-start">
+                                <CardActionArea  onClick={this.handleClick}>
+                                <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src="https://tokyo-kitchen.icook.network/uploads/recipe/cover/46241/large_fc426cd0a3125e35.jpg" />
+                                </ListItemAvatar>
+                                <ListItemText
+                                    primary="西红柿炒鸡蛋"
+                                    secondary={
+                                        <React.Fragment>
+                                            <Typography component="span" className={classes.inline} color="textPrimary">
+                                                Translation
+                                            </Typography>
+                                            {" Egg with Tomato"}
+                                        </React.Fragment>
+                                    }
+                                >
+                                </ListItemText>
+                                </CardActionArea>
+                            </ListItem>
+                            <ListItem alignItems="flex-start">
+                                <CardActionArea onClick={this.handleClick}>
+                                <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src="http://ali.xinshipu.cn/20100506/original/1273127528984.jpg" />
+                                </ListItemAvatar>
+                                <ListItemText
+                                    primary="回锅肉"
+                                    secondary={
                                     <React.Fragment>
                                         <Typography component="span" className={classes.inline} color="textPrimary">
                                             Translation
                                         </Typography>
-                                        {" Egg with Tomato"}
+                                        {" Twice cooked pork with vegatables"}
                                     </React.Fragment>
-                                }
-                            >
-                            </ListItemText>
-                            </CardActionArea>
-                        </ListItem>
-                        <ListItem alignItems="flex-start">
-                            <CardActionArea onClick={this.handleClick}>
-                            <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary="回锅肉"
-                                secondary={
-                                <React.Fragment>
-                                    <Typography component="span" className={classes.inline} color="textPrimary">
-                                        Translation
-                                    </Typography>
-                                    {" Twice cooked pork with vegatables"}
-                                </React.Fragment>
-                                }
-                            />
-                            </CardActionArea>
-                        </ListItem>
-                        <ListItem alignItems="flex-start">
-                            <CardActionArea onClick={this.handleClick}>
-                            <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </ListItemAvatar>
-                            <ListItemText
-                                primary="宫保鸡丁"
-                                secondary={
-                                <React.Fragment>
-                                    <Typography component="span" className={classes.inline} color="textPrimary">
-                                        Translation
-                                    </Typography>
-                                    {" balabala"}
-                                </React.Fragment>
-                                }
-                            />
-                            </CardActionArea>
-                        </ListItem>
-                    </List>
-                </CardContent>
-        </Card>
+                                    }
+                                />
+                                </CardActionArea>
+                            </ListItem>
+                            <ListItem alignItems="flex-start">
+                                <CardActionArea onClick={this.handleClick}>
+                                <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src="http://ali.xinshipu.cn/20140910/original/1410358049556.jpg" />
+                                </ListItemAvatar>
+                                <ListItemText
+                                    primary="宫保鸡丁"
+                                    secondary={
+                                    <React.Fragment>
+                                        <Typography component="span" className={classes.inline} color="textPrimary">
+                                            Translation
+                                        </Typography>
+                                        {" balabala"}
+                                    </React.Fragment>
+                                    }
+                                />
+                                </CardActionArea>
+                            </ListItem>
+                        </List>
+                    </CardContent>
+            </Card>
 
-        <Card className={classes.card}>
+            <Card className={classes.card}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         Canteen 9 - Jiu Li Xiang
@@ -137,7 +136,7 @@ class CanteenCard extends React.Component  {
                     alt="canteen-picture"
                     className={classes.media}
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image="http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_14_1_280x180.png"
                     title="canteen-picture"
                 />
                 <CardContent>
@@ -148,7 +147,7 @@ class CanteenCard extends React.Component  {
                         <ListItem alignItems="flex-start">
                             <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                <Avatar alt="Remy Sharp" src="http://www.ddmeishi.com/uploads/allimg/170808/7-1FPQ62K1.jpg" />
                             </ListItemAvatar>
                             <ListItemText
                                 primary="沸腾鱼"
@@ -166,7 +165,7 @@ class CanteenCard extends React.Component  {
                         <ListItem alignItems="flex-start">
                             <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="http://ali.xinshipu.cn/20120830/original/1346317244651.jpg" />
                             </ListItemAvatar>
                             <ListItemText
                                 primary="地三鲜"
@@ -184,10 +183,10 @@ class CanteenCard extends React.Component  {
                         <ListItem alignItems="flex-start">
                             <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="http://ali.xinshipu.cn/20130410/original/1365589504242.jpg" />
                             </ListItemAvatar>
                             <ListItemText
-                                primary="宫保鸡丁"
+                                primary="酸汤肥牛"
                                 secondary={
                                 <React.Fragment>
                                     <Typography component="span" className={classes.inline} color="textPrimary">
@@ -202,6 +201,7 @@ class CanteenCard extends React.Component  {
                     </List>
                 </CardContent>
             </Card>
+
         </Grid>
         )
     }
