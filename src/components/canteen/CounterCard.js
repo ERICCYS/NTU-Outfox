@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -21,7 +21,7 @@ const styles = theme => ({
   },
 });
 
-const CounterCard = ({classes, counter}) => {
+const CounterCard = ({ classes, counter }) => {
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -47,7 +47,10 @@ const CounterCard = ({classes, counter}) => {
         <Button size="small" color="primary">
           Order
         </Button>
-        <StatusIcon />
+        <StatusIcon
+          canteenStatus={counter.canteenStatus}
+          status={counter.status}
+        />
       </CardActions>
     </Card>
   );

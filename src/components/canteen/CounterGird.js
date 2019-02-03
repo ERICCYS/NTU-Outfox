@@ -85,9 +85,9 @@ const TitlebarGridList = (({classes, counters, canteenStatus}) => {
                             subtitle={<span>Style: {counter.style}</span>}
                             actionIcon={
                                 <ConditionalIcon
+                                    classes={classes}
                                     canteenStatus={canteenStatus}
                                     status={counter.status}
-                                    classes={classes}
                                 />
                             }
                         />
