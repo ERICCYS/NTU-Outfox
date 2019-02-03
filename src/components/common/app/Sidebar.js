@@ -95,7 +95,14 @@ class Sidebar extends React.PureComponent {
                                   onClick={this.handleBus}
                         >
                             <i className="fas fa-bus"/>
-                            <ListItemText primary={"Shuttlebus"}/>
+                            <ListItemText primary={"Shuttle Bus"}/>
+                        </ListItem>
+                        <ListItem button key="Lost and Found"
+                                    component={props => <Link to='/lost-and-found' {...props} />}
+                                  onClick={handleClose}
+                        >
+                            <i className="fas fa-key"/>
+                            <ListItemText primary={"Lost and Found"}/>
                         </ListItem>
                         <Divider/>
                         <ListItem button key="Feedback"
