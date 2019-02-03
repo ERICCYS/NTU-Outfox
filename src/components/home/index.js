@@ -12,6 +12,7 @@ const styles = () => ({
 const HomeApp = ({classes}) => (
         <div className={classes.root}>
             <Main/>
+            {/*{ReactDom.createPortal(<Footer/>, document.getElementById("outfox-footer-container"))}*/}
         </div>
     );
 
