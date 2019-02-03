@@ -1,15 +1,10 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
-import { Typography } from '@material-ui/core';
-import ItemCard from './ItemCard'
-// import ReportFrom from './ReportSection'
-import lostItems from './lostItems.json'
-import ReportSection from './ReportSection';
 import SearchIcon from '@material-ui/icons/Search';
-import {fade} from '@material-ui/core/styles/colorManipulator';
 import InputBase from '@material-ui/core/InputBase';
+import {Typography} from "@material-ui/core";
+import Button from "../common/Button";
 
 const styles = theme => ({
     root: {
@@ -37,15 +32,15 @@ const styles = theme => ({
     },
     search: {
         position: 'relative',
-        borderRadius: 16,
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: theme.palette.grey[500],
-        transition: [["border-color", "0.1s"]],
+        boxShadow: theme.shadows[1],
+        transition: [["box-shadow", "0.1s"]],
         '&:hover': {
-            boarderColor: fade(theme.palette.common.black, 0.25),
+            boxShadow: theme.shadows[4],
         },
-        marginLeft: "5%",
+        "&:focus": {
+            boxShadow: theme.shadows[3],
+        },
+        marginLeft: "10%",
         width: '80%',
     },
     searchIcon: {
@@ -74,13 +69,14 @@ const styles = theme => ({
 });
 
 class LostFoundApp extends React.Component {
+
     render() {
-        const {classes} = this.props;
+        const {classes, history} = this.props;
         return (
             <div className={classes.root}>
-                <div className={classes.title} >
-                    <Typography variant="h3">Lost and Found Forum</Typography>
-                </div>
+                <Typography align="center" variant="h3" gutterBottom>
+                    <img src={require('../../asset/logo.svg')} alt="Outfox logo"/>
+                </Typography>
                 <div className={classes.candiv}>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -100,25 +96,12 @@ class LostFoundApp extends React.Component {
                         />
                     </div>
                 </div>
-                <div className={classes.section}>
-                    <Typography className={classes.subtitle} variant="h4">Report your lost</Typography>
-                    <ReportSection></ReportSection>
-                </div>
-                <div className={classes.section}>
-                    <Typography className={classes.subtitle} variant="h4">Found Items</Typography>
-                    <Grid className={classes.root} spacing={8} container>
-                        {
-                            lostItems.map((lostitem, index) => (
-                                <Grid key={index} item>
-                                    <ItemCard
-                                        lostitem={lostitem}
-                                    />
-                                </Grid>
-                            ))
-                        }
-                    </Grid>
-                </div>
-                
+                <Typography align="center" variant="subtitle2">
+                    {console.log(history)}
+                    <Button style={{marginRight: 8}} onClick={() => history.push('/lost-and-found/lost')}>Report
+                        Lost</Button>
+                    <Button onClick={() => history.push('/lost-and-foundfound/explore')}>Explore</Button>
+                </Typography>
             </div>
         )
     }

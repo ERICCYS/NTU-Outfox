@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { withStyles } from '@material-ui/core/styles';
-import Button from "@material-ui/core/Button";
+import {withStyles} from '@material-ui/core/styles';
+import Button from "../common/Button";
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
 function getModalStyle() {
   const top = 50;
@@ -124,12 +121,7 @@ class ReportForm extends React.Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state)
     this.handleOpen()
-  };
-
-  handleClear = () => {
-    this.setState(initialState);
   };
 
   render() {
@@ -140,59 +132,36 @@ class ReportForm extends React.Component {
           id="name-field"
           label="Name"
           style={{width: '45%', marginRight: '4%'}}
-          placeholder="Your Full Name as on Matric Card"
           required
-          fullWidth
           value={this.state.name}
           onChange={this.handleChange('name')}
           margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
         <TextField
-          id="matric-no-field"
-          label="Phone No"
-          style={{width: '45%', marginLeft: "4%"}}
-          placeholder="Phone Number"
-          fullWidth
-          value={this.state.phone}
-          onChange={this.handleChange('phone')}
-          margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
+            id="matric-no-field"
+            label="Phone Number"
+            style={{width: '45%', marginLeft: "4%"}}
+            fullWidth
+            value={this.state.phone}
+            onChange={this.handleChange('phone')}
+            margin="normal"
         />
         <TextField
           id="email-field"
           label="Email"
           style={{width: '45%', marginRight: "4%"}}
-          placeholder="Your Email Address"
           required
-          fullWidth
           value={this.state.email}
           onChange={this.handleChange('email')}
           margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
         <TextField
           id="matric-no-field"
           label="Matric No./Staff No."
           style={{width: '45%', marginLeft: "4%"}}
-          placeholder="Your Matric/Staff Number"
-          fullWidth
           value={this.state.matric}
           onChange={this.handleChange('matric')}
           margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
         <TextField
           id="lost-item-field"
@@ -203,25 +172,20 @@ class ReportForm extends React.Component {
           value={this.state.itemname}
           onChange={this.handleChange('itemname')}
           margin="normal"
-          variant="outlined"
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
         <TextField
-          id="select-reporter-category"
-          select
-          label="You are?"
-          value={this.state.reporter}
-          onChange={this.handleChange('reporter')} 
-          style={{width: '45%', marginLeft: "4%"}}
-          SelectProps={{
+            id="select-reporter-category"
+            select
+            label="Domain"
+            value={this.state.reporter}
+            onChange={this.handleChange('reporter')}
+            style={{width: '45%', marginLeft: "4%"}}
+            SelectProps={{
             MenuProps: {
               className: classes.menu,
             },
           }}
-          margin="normal"
-          variant="outlined"
+            margin="normal"
         >
           {reporters.map(option => (
             <MenuItem key={option.value} value={option.value}>
@@ -240,15 +204,7 @@ class ReportForm extends React.Component {
           value={this.state.issues}
           onChange={this.handleChange('description')} 
           margin="normal"
-          variant="outlined"
         />
-        <Button 
-          variant="contained" 
-          style={{backgroundColor: '#FF0266', width: '10%', marginLeft: '73%', marginRight: '5%'}}
-          onClick={this.handleClear}
-        >
-          Clear
-        </Button>
         <Button 
           variant="contained" 
           color="primary"
@@ -270,20 +226,6 @@ class ReportForm extends React.Component {
             <Typography variant="h6" id="modal-title">
               Thank you for your submission
             </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
-            <Grid container spacing={24}>
-              <Grid item xs={6}>
-                <Paper className={classes.paper1}>Name: {this.state.name} </Paper>
-              </Grid>
-              <Grid item xs={6}>
-                <Paper className={classes.paper1}>Email: {this.state.email}</Paper>
-              </Grid>
-              <Grid item xs={12}>
-                <Paper className={classes.paper1}>Issue: {this.state.issues}</Paper>
-              </Grid>
-            </Grid>
           </div>
         </Modal>
       </form>
