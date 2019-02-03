@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -51,7 +51,7 @@ class EventCard extends React.Component  {
     };
 
     render() {
-        const { classes, abbr, title, subheader, brief, description, imageSource} = this.props;
+        const {classes, abbr, title, subheader, brief, description, imageSource} = this.props;
         return (
             <Card className={classes.card}>
                 <CardHeader
@@ -111,7 +111,7 @@ EventCard.propTypes = {
     subheader: PropTypes.string,
     brief: PropTypes.string,
     description: PropTypes.string,
-    imageSource:PropTypes.string,
+    imageSource: PropTypes.string,
 };
 
 export default withStyles(styles)(EventCard);

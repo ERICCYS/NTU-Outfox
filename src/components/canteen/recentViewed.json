@@ -1,26 +1,26 @@
 [
-    {
-        "name": "Tian Yi Dian",
-        "canteen": "Canteen 13",
-        "canteenStatus": "closed",
-        "style": "Chinese",
-        "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_14_1_280x180.png",
-        "status": "normal"
-    },
-    {
-        "name": "Jiu Li Xiang",
-        "canteen": "Canteen 11",
-        "canteenStatus": "open",
-        "style": "Japanese",
-        "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_13-2_280x180.png",
-        "status": "crowded"
-    },
-    {
-        "name": "Western Food",
-        "canteen": "Canteen 14",
-        "canteenStatus": "open",
-        "style": "Western",
-        "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/FoodgleFoodCourt(280x180)(UT).jpg",
-        "status": "normal"
-    }
+  {
+    "name": "Tian Yi Dian",
+    "canteen": "Canteen 13",
+    "canteenStatus": "closed",
+    "style": "Chinese",
+    "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_14_1_280x180.png",
+    "status": "normal"
+  },
+  {
+    "name": "Jiu Li Xiang",
+    "canteen": "Canteen 11",
+    "canteenStatus": "open",
+    "style": "Japanese",
+    "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_13-2_280x180.png",
+    "status": "crowded"
+  },
+  {
+    "name": "Western Food",
+    "canteen": "Canteen 14",
+    "canteenStatus": "open",
+    "style": "Western",
+    "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/FoodgleFoodCourt(280x180)(UT).jpg",
+    "status": "normal"
+  }
 ]

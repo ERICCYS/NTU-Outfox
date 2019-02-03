@@ -10,7 +10,7 @@ import recentViewed from './recentViewed.json'
 import popular from './popular.json'
 import canteenInfo from '../../asset/canteenInfo.json'
 import SearchIcon from '@material-ui/icons/Search';
-import { fade } from '@material-ui/core/styles/colorManipulator';
+import {fade} from '@material-ui/core/styles/colorManipulator';
 import InputBase from '@material-ui/core/InputBase';
 
 const styles = theme => ({
@@ -96,7 +96,6 @@ const displayCanteens = () => {
 };
 
 
-
 // const displaySearch = () => {
 //     const { classes } = this.props;
 //     return (
@@ -122,9 +121,10 @@ class CanteenApp extends React.Component {
         if (e.key === 'Enter') {
             this.props.history.push(`/canteen/search-result`);
         }
-    }
+    };
+
     render() {
-        const { classes } = this.props;
+        const {classes} = this.props;
 
         return (
             <div className={classes.root}>
@@ -135,7 +135,7 @@ class CanteenApp extends React.Component {
                     <Typography className={classes.subtitle} variant="h4">Search cantens</Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                            <SearchIcon />
+                            <SearchIcon/>
                         </div>
                         <InputBase
                             placeholder="Search…"
@@ -182,7 +182,7 @@ class CanteenApp extends React.Component {
             </div>
         )
     }
-};
+}
 
 CanteenApp.propTypes = {
     classes: PropTypes.object.isRequired,

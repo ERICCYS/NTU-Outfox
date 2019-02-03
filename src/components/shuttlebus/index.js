@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Typography } from '@material-ui/core/es';
 
 const styles = () => ({
     root: {
@@ -15,18 +14,18 @@ const styles = () => ({
 
 class BusApp extends React.Component {
     redirectToTarget = () => {
-      this.props.history.push(`https://itunes.apple.com/sg/app/ntu-go/id1004510295?mt=8`)
-    }
+        this.props.history.push(`https://itunes.apple.com/sg/app/ntu-go/id1004510295?mt=8`)
+    };
 
-    render () {
-      return (
-         <div>
-          {this.renderRedirect()}
-          <button onClick={this.redirectToTarget}>Redirect</button>
-         </div>   
-      )
+    render() {
+        return (
+            <div>
+                {this.renderRedirect()}
+                <button onClick={this.redirectToTarget}>Redirect</button>
+            </div>
+        )
     }
-  }
+}
 
 BusApp.propTypes = {
     classes: PropTypes.object.isRequired,
