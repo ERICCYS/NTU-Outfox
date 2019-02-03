@@ -18,7 +18,7 @@ class Order extends React.Component {
 
     handleClose = () => {
         this.setState({open: false});
-        this.props.history.push(`/canteen/search-result`)
+        this.props.history.push(`/canteen/search`)
     };
 
     render() {

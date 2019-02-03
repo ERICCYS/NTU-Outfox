@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
 import Typography from '@material-ui/core/Typography';
-import Grid from "@material-ui/core/Grid";
 import withStyles from "@material-ui/core/styles/withStyles";
 import FunctionCard from '../common/FunctionCard'
 import CounterGrid from './CounterGird'
@@ -17,9 +16,6 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
     },
-    header: {
-        textAlign: 'center',
-    },
     candiv: {
         marginBottom: 30,
     },
@@ -29,27 +25,31 @@ const styles = theme => ({
     },
     search: {
         position: 'relative',
-        borderRadius: theme.shape.borderRadius,
-        borderColor: "blue",
-        backgroundColor: fade(theme.palette.common.white, 0.15),
+        borderRadius: 16,
+        borderWidth: 1,
+        borderStyle: "solid",
+        borderColor: theme.palette.grey[500],
+        transition: [["border-color", "0.1s"]],
         '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
+            boarderColor: fade(theme.palette.common.black, 0.25),
         },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing.unit,
-            width: 'auto',
-        },
+        marginLeft: "5%",
+        width: '80%',
     },
     searchIcon: {
-        width: theme.spacing.unit * 9,
+        width: "100%",
         height: '100%',
         position: 'absolute',
-        pointerEvents: 'none',
         display: 'flex',
+        pointerEvents: "none",
         alignItems: 'center',
         justifyContent: 'center',
+        paddingLeft: "95%",
+        boxSizing: "border-box"
+    },
+    cardRoot: {
+        overflowX: "scroll",
+        display: "flex",
     },
     inputRoot: {
         color: 'inherit',
@@ -59,16 +59,13 @@ const styles = theme => ({
         paddingTop: theme.spacing.unit,
         paddingRight: theme.spacing.unit,
         paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
+        paddingLeft: theme.spacing.unit * 2,
         transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 120,
-            '&:focus': {
-                width: 200,
-            },
-        },
+        width: '80%',
     },
+    buttonRoot: {
+        borderRadius: 0,
+    }
 });
 
 
@@ -77,12 +74,10 @@ const displayCanteens = () => {
     canteenInfo.forEach((canteen) => {
         let children = () => {
             return (
-                <div>
-                    <CounterGrid
-                        counters={canteen.counters}
-                        canteenStatus={`${canteen.status}`}
-                    />
-                </div>
+                <CounterGrid
+                    counters={canteen.counters}
+                    canteenStatus={`${canteen.status}`}
+                />
             )
         };
         canteens.push(
@@ -95,32 +90,17 @@ const displayCanteens = () => {
     return canteens
 };
 
-
-// const displaySearch = () => {
-//     const { classes } = this.props;
-//     return (
-//         <div className={classes.search}>
-//             <div className={classes.searchIcon}>
-//               <SearchIcon />
-//             </div>
-//             <InputBase
-//               placeholder="Search…"
-//               classes={{
-//                 root: classes.inputRoot,
-//                 input: classes.inputInput,
-//               }}
-//             />
-//           </div>
-//     )
-// }
-
 class CanteenApp extends React.Component {
 
 
     search = (e) => {
         if (e.key === 'Enter') {
-            this.props.history.push(`/canteen/search-result`);
+            this.props.history.push(`/canteen/search`);
         }
+    };
+
+    handleSearch = () => {
+        this.props.history.push('/canteen/search');
     };
 
     render() {
@@ -128,17 +108,17 @@ class CanteenApp extends React.Component {
 
         return (
             <div className={classes.root}>
-                <div className={classes.header}>
-                    <Typography variant="h3">Welcome to eat @ NTU</Typography>
-                </div>
                 <div className={classes.candiv}>
-                    <Typography className={classes.subtitle} variant="h4">Search cantens</Typography>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                            <SearchIcon/>
+                            <SearchIcon
+                                color="primary"
+                                onClick={this.handleSearch}
+                                style={{cursor: "pointer", pointerEvents: "all"}}
+                            />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Tell us what is your favorite?"
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
@@ -147,36 +127,30 @@ class CanteenApp extends React.Component {
                         />
                     </div>
                 </div>
+
                 <div className={classes.candiv}>
-                    <Typography className={classes.subtitle} variant="h4">Recently Viewed Counters</Typography>
-                    <Grid className={classes.root} spacing={8} container>
+                    <Typography className={classes.subtitle} variant="h5">Recently visited</Typography>
+                    <div className={classes.cardRoot}>
                         {
                             recentViewed.map((counter, index) => (
-                                <Grid key={index} item>
-                                    <CounterCard
-                                        counter={counter}
-                                    />
-                                </Grid>
+                                <CounterCard key={index} counter={counter}/>
                             ))
                         }
-                    </Grid>
+                    </div>
                 </div>
+
                 <div className={classes.candiv}>
-                    <Typography className={classes.subtitle} variant="h4">Popular Counters</Typography>
-                    <Grid className={classes.root} spacing={8} container>
+                    <Typography className={classes.subtitle} variant="h5">Trending</Typography>
+                    <div className={classes.cardRoot}>
                         {
                             popular.map((counter, index) => (
-                                <Grid key={index} item>
-                                    <CounterCard
-                                        counter={counter}
-                                    />
-                                </Grid>
+                                <CounterCard key={index} counter={counter}/>
                             ))
                         }
-                    </Grid>
+                    </div>
                 </div>
                 <div className={classes.candiv}>
-                    <Typography className={classes.subtitle} variant="h4">Explore More</Typography>
+                    <Typography className={classes.subtitle} variant="h5">Explore More</Typography>
                     {displayCanteens()}
                 </div>
             </div>

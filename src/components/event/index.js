@@ -7,11 +7,10 @@ import Grid from "@material-ui/core/Grid";
 
 const styles = () => ({
     root: {
-        flexGrow: 1
+        flexGrow: 1,
+        width: "70%",
+        margin: "auto",
     },
-    header: {
-        textAlign: 'center'
-    }
 });
 
 const EventApp = ({classes}) => {
@@ -19,7 +18,7 @@ const EventApp = ({classes}) => {
         <Grid className={classes.root} spacing={16} container>
             {
                 eventInfo.map((event, index) => (
-                    <Grid key={index} item>
+                    <Grid key={index} xs item>
                         <EventCard
                             abbr={event.abbr}
                             title={event.title}

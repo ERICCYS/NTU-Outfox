@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Hall Room Key",
+        "location": "Hall 13 Blk64 TvRoom",
+        "description": "A key chain with a Hall13 room key",
+        "img": "https://www.sparrowslockpicks.com/v/vspfiles/photos/BK1-2.jpg",
+        "contact": "87654321"
+    },
+    {
+        "name": "Thumb Drive",
+        "location": "LWN library Level 2",
+        "description": "Thumb Drive, sandisk, 32GB",
+        "img": "https://www.clasohlson.com/medias/sys_master/9279996985374.jpg",
+        "contact": "98765432"
+    },
+    {
+        "name": "EzLink Card",
+        "location": "Hive Library",
+        "description": "A greenish-blue ezlink beside the paying machine",
+        "img": "https://www.lta.gov.sg/content/dam/ltaweb/corp/RoadsMotoring/img/Ezlink.jpg",
+        "contact": "12345678"
+    }
+]
