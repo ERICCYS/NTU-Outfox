@@ -26,6 +26,7 @@ const EventApp = ({classes}) => {
                             subheader={event.subheader}
                             brief={event.brief}
                             description={event.description}
+                            imageSource={event.imageSource}
                         />
                     </Grid>
                 ))}
