@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -34,9 +32,9 @@ const styles = {
 
 class CanteenCard extends React.Component  {
     
-    handleClick() {
+    handleClick = () => {
         // do something meaningful, Promises, if/else, whatever, and then
-        this.props.history.push(`/food-on-the-way`)
+        this.props.history.push(`/canteen/food-on-the-way`)
     }
 
     render() {
@@ -45,7 +43,6 @@ class CanteenCard extends React.Component  {
         return(
             <Grid className={classes.root} spacing={8} container>
             <Card className={classes.card}>
-            <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         Canteen 13 - Tian Yi Dian
@@ -59,7 +56,7 @@ class CanteenCard extends React.Component  {
                     alt="canteen-picture"
                     className={classes.media}
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    image="https://www.google.com/search?q=NTU+canteen+13+Tian+Yi+Dian&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiXvY7qyp7gAhXFknAKHeoTAFUQ_AUIDygC&biw=1440&bih=771#imgrc=VYqwo8RQK-ELmM:"
                     title="canteen-picture"
                 />
                 <CardContent>
@@ -68,6 +65,7 @@ class CanteenCard extends React.Component  {
                     </Typography>
                     <List className={classes.root}>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea  onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                             </ListItemAvatar>
@@ -82,12 +80,11 @@ class CanteenCard extends React.Component  {
                                     </React.Fragment>
                                 }
                             >
-                            <Button size="small" color="primary" onClick={this.handleClick}>
-                                Order
-                            </Button>
                             </ListItemText>
+                            </CardActionArea>
                         </ListItem>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </ListItemAvatar>
@@ -102,8 +99,10 @@ class CanteenCard extends React.Component  {
                                 </React.Fragment>
                                 }
                             />
+                            </CardActionArea>
                         </ListItem>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </ListItemAvatar>
@@ -114,18 +113,17 @@ class CanteenCard extends React.Component  {
                                     <Typography component="span" className={classes.inline} color="textPrimary">
                                         Translation
                                     </Typography>
-                                    {"balabala"}
+                                    {" balabala"}
                                 </React.Fragment>
                                 }
                             />
+                            </CardActionArea>
                         </ListItem>
                     </List>
                 </CardContent>
-            </CardActionArea>
         </Card>
 
         <Card className={classes.card}>
-            <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         Canteen 9 - Jiu Li Xiang
@@ -148,6 +146,7 @@ class CanteenCard extends React.Component  {
                     </Typography>
                     <List className={classes.root}>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                             </ListItemAvatar>
@@ -162,8 +161,10 @@ class CanteenCard extends React.Component  {
                                     </React.Fragment>
                                 }
                             />
+                            </CardActionArea>
                         </ListItem>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </ListItemAvatar>
@@ -178,8 +179,10 @@ class CanteenCard extends React.Component  {
                                 </React.Fragment>
                                 }
                             />
+                            </CardActionArea>
                         </ListItem>
                         <ListItem alignItems="flex-start">
+                            <CardActionArea onClick={this.handleClick}>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </ListItemAvatar>
@@ -190,14 +193,14 @@ class CanteenCard extends React.Component  {
                                     <Typography component="span" className={classes.inline} color="textPrimary">
                                         Translation
                                     </Typography>
-                                    {"balabala"}
+                                    {" balabala"}
                                 </React.Fragment>
                                 }
                             />
+                            </CardActionArea>
                         </ListItem>
                     </List>
                 </CardContent>
-            </CardActionArea>
             </Card>
         </Grid>
         )

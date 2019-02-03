@@ -12,15 +12,21 @@ const styles = () => ({
 	}
 });
 
-const BusApp = ({classes}) => {  
-    return (
-        <div className={classes.root}>
-			<div className={classes.title}>
-				<Typography variant="h2">Welcome to take NTU Shuttle Bus!</Typography>
-			</div>
-        </div>
-    );
-}
+
+class BusApp extends React.Component {
+    redirectToTarget = () => {
+      this.props.history.push(`https://itunes.apple.com/sg/app/ntu-go/id1004510295?mt=8`)
+    }
+
+    render () {
+      return (
+         <div>
+          {this.renderRedirect()}
+          <button onClick={this.redirectToTarget}>Redirect</button>
+         </div>   
+      )
+    }
+  }
 
 BusApp.propTypes = {
     classes: PropTypes.object.isRequired,
