@@ -42,7 +42,7 @@ const Footer = ({classes}) => (
                     </Grid>
                 )}
             </Grid>
-            <Typography>Hysia 1.0</Typography>
+            <Typography>NTU Outfox Group</Typography>
         </div>
     </footer>
 );

@@ -9,13 +9,11 @@ const styles = () => ({
     },
 });
 
-const HomeApp = ({classes}) => {  
-    return (
+const HomeApp = ({classes}) => (
         <div className={classes.root}>
             <Main/>
         </div>
     );
-};
 
 HomeApp.propTypes = {
     classes: PropTypes.object.isRequired,
