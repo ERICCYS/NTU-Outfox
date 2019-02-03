@@ -8,6 +8,7 @@ import EventApp from './components/event/';
 import CanteenApp from './components/canteen/';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Header from './components/common/app/Header';
+import FeedbackMessageBars from "./components/feedback/MessageBars";
 
 const history = createBrowserHistory();
 
@@ -40,6 +41,7 @@ const RootRouter = ({ classes }) => (
 					<Route component={PageNotFound} />
 				</Switch>
 			</main>
+			<FeedbackMessageBars/>
 			<div id="outfox-footer-container"/>
 		</div>
 	</Router>

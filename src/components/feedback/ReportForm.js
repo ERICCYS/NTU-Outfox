@@ -92,6 +92,7 @@ class ReportForm extends React.Component {
 
     handleSubmit = () => {
         this.props.handleClose();
+        this.props.handleSubmit();
     };
 
     render() {
@@ -200,6 +201,7 @@ class ReportForm extends React.Component {
 ReportForm.propTypes = {
     classes: PropTypes.object.isRequired,
     handleClose: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(ReportForm);
