@@ -1,47 +1,78 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Divider from '@material-ui/core/Divider';
+import Avatar from '@material-ui/core/Avatar';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import {Typography} from '@material-ui/core';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+        backgroundColor: theme.palette.background.paper,
     },
-    paper: {
-        padding: theme.spacing.unit * 2,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
+    gridList: {
+        flex: 1,
     },
+    bigAvatar: {
+        margin: 20,
+        width: 150,
+        height: 150,
+    },
+    info: {
+        margin: 20
+    }
 });
 
-function AutoGrid(props) {
-    const {classes} = props;
+/**
+ * The example data is structured as follows:
+ *
+ * import image from 'path/to/image.jpg';
+ * [etc...]
+ *
+ * const tileData = [
+ *   {
+ *     img: image,
+ *     title: 'Image',
+ *     author: 'author',
+ *     cols: 2,
+ *   },
+ *   {
+ *     [etc...]
+ *   },
+ * ];
+ */
+function ImageGridList(props) {
+    const { classes } = props;
 
     return (
         <div className={classes.root}>
-            <Grid container spacing={24}>
+            <Grid container spacing={12}>
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>xs=6</Paper>
-                    <img src="http://rezaboostani.ir/wp-content/uploads/2018/09/acbc-300x200.jpeg" alt="some stuff"/>
+                    <img style={{ width: '100%', height: 400 }} src={"https://wallpapertag.com/wallpaper/full/b/2/6/114219-new-galaxy-background-tumblr-1920x1200-for-ipad.jpg"}></img>
                 </Grid>
-
-            </Grid>
-            <Grid container spacing={24}>
-                <Grid item xs>
-                    <Paper className={classes.paper}>xs</Paper>
+                <Grid item xs={2}>
+                    <Avatar
+                        src="https://cdn1.vectorstock.com/i/1000x1000/19/45/user-avatar-icon-sign-symbol-vector-4001945.jpg"
+                        className={classes.bigAvatar} />
                 </Grid>
-
-                <Grid item xs>
-                    <Paper className={classes.paper}>xs</Paper>
+                <Grid item xs={10}>
+                    <Typography className={classes.info} variant="h3">Username</Typography>
+                    <Typography className={classes.info} variant="h3">School</Typography>
                 </Grid>
+                <Divider />
             </Grid>
         </div>
     );
 }
 
-AutoGrid.propTypes = {
+ImageGridList.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AutoGrid);
+export default withStyles(styles)(ImageGridList);
