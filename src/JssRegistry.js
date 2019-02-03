@@ -22,8 +22,8 @@ const hysiaTheme = createMuiTheme({
         }
     },
     palette: {
-        primary: {main: '#33ACFF', contrastText: '#f9f9f9'},
-        secondary: {main: '#66EFEF', contrastText: '#363D4E'},
+        primary: {main: '#FF9800', contrastText: '#f9f9f9'},
+        secondary: {main: '#b300d7', contrastText: '#363D4E'},
         error: {main: '#F4606C',},
     },
     shape: {

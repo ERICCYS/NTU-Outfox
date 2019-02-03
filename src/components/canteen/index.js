@@ -95,12 +95,12 @@ class CanteenApp extends React.Component {
 
     search = (e) => {
         if (e.key === 'Enter') {
-            this.props.history.push(`/canteen/search-result`);
+            this.props.history.push(`/canteen/search`);
         }
     };
 
     handleSearch = () => {
-        this.props.history.push('/canteen/search-result');
+        this.props.history.push('/canteen/search');
     };
 
     render() {

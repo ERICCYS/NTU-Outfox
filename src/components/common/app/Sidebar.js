@@ -55,6 +55,13 @@ class Sidebar extends React.PureComponent {
         this.setState({open: true})
     };
 
+    handleBus = () => {
+        this.props.handleClose();
+        window.open("https://itunes.apple.com/sg/app/ntu-campus-bus/id1240692219?mt=8");
+        window.focus();
+
+    };
+
     render() {
         const {classes, on, handleClose} = this.props;
         const {open} = this.state;
@@ -85,8 +92,7 @@ class Sidebar extends React.PureComponent {
                             <ListItemText primary="Canteen"/>
                         </ListItem>
                         <ListItem button key="Shuttlebus"
-                                  component={props => <Link to='/bus' {...props} />}
-                                  onClick={handleClose}
+                                  onClick={this.handleBus}
                         >
                             <i className="fas fa-bus"/>
                             <ListItemText primary={"Shuttlebus"}/>
