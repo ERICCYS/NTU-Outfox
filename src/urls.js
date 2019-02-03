@@ -10,6 +10,7 @@ import LostFoundApp from './components/lostfound'
 import withStyles from '@material-ui/core/styles/withStyles';
 import Header from './components/common/app/Header';
 import FeedbackMessageBars from "./components/feedback/MessageBars";
+import CanteenRouter from "./components/canteen/urls";
 
 const history = createBrowserHistory();
 
@@ -38,8 +39,8 @@ const RootRouter = ({ classes }) => (
 				<Switch>
 					<Route exact path="/" component={HomeApp} />
 					<Route path="/events" component={EventApp} />
-					<Route path="/canteen" component={CanteenApp} />
 					<Route path="/lostandfound" component={LostFoundApp} />
+					<Route path="/canteen" component={CanteenRouter}/>
 					<Route component={PageNotFound} />
 				</Switch>
 			</main>
