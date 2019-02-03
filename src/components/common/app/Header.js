@@ -102,6 +102,7 @@ class Header extends React.Component {
             <div className={classes.root}>
                 <AppBar
                     position="fixed"
+                    color="default"
                     className={classNames(classes.appBar, {
                         [classes.appBarShift]: open
                     })}

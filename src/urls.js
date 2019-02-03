@@ -5,9 +5,11 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import PageNotFound from './components/common/app/PageNotFound';
 import HomeApp from './components/home/';
 import EventApp from './components/event/';
-import CanteenApp from './components/canteen/';
+import LostNFoundRouter from './components/lostfound/urls'
 import withStyles from '@material-ui/core/styles/withStyles';
 import Header from './components/common/app/Header';
+import FeedbackMessageBars from "./components/feedback/MessageBars";
+import CanteenRouter from "./components/canteen/urls";
 
 const history = createBrowserHistory();
 
@@ -36,10 +38,12 @@ const RootRouter = ({ classes }) => (
 				<Switch>
 					<Route exact path="/" component={HomeApp} />
 					<Route path="/events" component={EventApp} />
-					<Route path="/canteen" component={CanteenApp} />
+					<Route path="/lost-and-found" component={LostNFoundRouter}/>
+					<Route path="/canteen" component={CanteenRouter}/>
 					<Route component={PageNotFound} />
 				</Switch>
 			</main>
+			<FeedbackMessageBars/>
 			<div id="outfox-footer-container"/>
 		</div>
 	</Router>

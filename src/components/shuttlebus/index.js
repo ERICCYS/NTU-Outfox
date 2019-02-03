@@ -1,7 +1,6 @@
 import React from 'react';
 import * as PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Typography } from '@material-ui/core/es';
 
 const styles = () => ({
     root: {
@@ -12,18 +11,24 @@ const styles = () => ({
 	}
 });
 
-const BusApp = ({classes}) => {  
-    return (
-        <div className={classes.root}>
-			<div className={classes.title}>
-				<Typography variant="h2">Welcome to take NTU Shuttle Bus!</Typography>
-			</div>
-        </div>
-    );
+
+class BusApp extends React.Component {
+    redirectToTarget = () => {
+        this.props.history.push(`https://itunes.apple.com/sg/app/ntu-go/id1004510295?mt=8`)
+    };
+
+    render() {
+        return (
+            <div>
+                {this.renderRedirect()}
+                <button onClick={this.redirectToTarget}>Redirect</button>
+            </div>
+        )
+    }
+}
 
 BusApp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(BusApp);
-
