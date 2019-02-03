@@ -16,7 +16,7 @@ const styles = () => ({
 
 const EventApp = ({classes}) => {
     return (
-        <Grid className={classes.root} spacing={8} container>
+        <Grid className={classes.root} spacing={16} container>
             {
                 eventInfo.map((event, index) => (
                     <Grid key={index} item>

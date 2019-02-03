@@ -26,6 +26,7 @@ const styles = () => ({
     }
 });
 
+
 const displayCanteens = () => {
     let canteens = [];
     canteenInfo.forEach((canteen) => {
