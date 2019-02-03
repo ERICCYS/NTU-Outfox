@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 import Icon from '@material-ui/core/Icon';
 
@@ -39,34 +39,34 @@ const styles = theme => ({
 
 const ConditionalIcon = ((props) => {
     const {classes, canteenStatus, status} = props;
-    if (canteenStatus == "closed") {
+    if (canteenStatus === "closed") {
         return (
-            <Icon className={classes.closed} >fiber_manual_record</Icon>
+            <Icon className={classes.closed}>fiber_manual_record</Icon>
         )
     } else {
-        if (status == "normal") {
+        if (status === "normal") {
             return (
-                <Icon className={classes.normal} >fiber_manual_record</Icon>
+                <Icon className={classes.normal}>fiber_manual_record</Icon>
             )
 
-        } else if (status == "crowded") {
+        } else if (status === "crowded") {
             return (
-                <Icon className={classes.crowded} >fiber_manual_record</Icon>
+                <Icon className={classes.crowded}>fiber_manual_record</Icon>
             )
 
         } else {
             return (
-                <Icon className={classes.flooded} >fiber_manual_record</Icon>
+                <Icon className={classes.flooded}>fiber_manual_record</Icon>
             )
         }
     }
-})
+});
 
 
-const StatusIcon = ({ classes, canteenStatus, status }) => {
+const StatusIcon = ({classes, canteenStatus, status}) => {
     return (
         <div className={classes.root}>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
             <ConditionalIcon
                 classes={classes}
                 canteenStatus={canteenStatus}
@@ -74,7 +74,7 @@ const StatusIcon = ({ classes, canteenStatus, status }) => {
             />
         </div>
     );
-}
+};
 
 StatusIcon.propTypes = {
     classes: PropTypes.object.isRequired,
