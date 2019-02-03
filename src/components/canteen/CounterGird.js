@@ -37,21 +37,21 @@ const styles = theme => ({
 const ConditionalIcon = ((props) => {
     const {classes, canteenStatus, status} = props;
 
-    if (canteenStatus == "closed") {
+    if (canteenStatus === "closed") {
         return (
             <IconButton className={classes.closed}>
                 <InfoIcon/>
             </IconButton>
         )
     } else {
-        if (status == "normal") {
+        if (status === "normal") {
             return (
                 <IconButton className={classes.normal}>
                     <InfoIcon/>
                 </IconButton>
             )
 
-        } else if (status == "crowded") {
+        } else if (status === "crowded") {
             return (
                 <IconButton className={classes.crowded}>
                     <InfoIcon/>
@@ -66,10 +66,10 @@ const ConditionalIcon = ((props) => {
             )
         }
     }
-})
+});
 
 const TitlebarGridList = (({classes, counters, canteenStatus}) => {
-    console.log(canteenStatus)
+    console.log(canteenStatus);
     return (
         <div className={classes.root}>
             <GridList cellHeight={240} className={classes.gridList}>
@@ -85,9 +85,9 @@ const TitlebarGridList = (({classes, counters, canteenStatus}) => {
                             subtitle={<span>Style: {counter.style}</span>}
                             actionIcon={
                                 <ConditionalIcon
+                                    classes={classes}
                                     canteenStatus={canteenStatus}
                                     status={counter.status}
-                                    classes={classes}
                                 />
                             }
                         />
