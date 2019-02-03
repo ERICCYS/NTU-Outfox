@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
 import HomeApp from '../components/home';
 import EventApp from '../components/event';
-// import CanteenApp from '../components/canteen';
+import CanteenApp from '../components/canteen';
 // import BusApp from '../components/shuttlebus';
 import ReportApp from '../components/report';
 import PageNotFound from '../components/common/app/PageNotFound';
@@ -37,7 +37,7 @@ const RootRouter = ({classes}) => (
                     <Route exact path="/" exact component={HomeApp}/>
                     <Route path="/events" component={EventApp}/>
                     <Route path="/feedback" component={ReportApp}/>
-                    {/* <Route path="/canteen" component={CanteenApp}/> */}
+                    <Route path="/canteen" exact component={CanteenApp}/>
                     <Route path="/canteen/search-result" component={SearchResult}/>
                     <Route path="/canteen/food-on-the-way" component={FoodOnTheWay}/>
                     {/* <Route path="/bus" component={BusApp} /> */}
