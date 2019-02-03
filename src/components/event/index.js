@@ -2,7 +2,7 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import EventCard from './EventCard.js';
-import eventInfo from './eventInfo.json';
+import eventInfo from '../../asset/eventInfo.json';
 import Grid from "@material-ui/core/Grid";
 
 const styles = () => ({
