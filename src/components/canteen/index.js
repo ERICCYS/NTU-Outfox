@@ -9,6 +9,7 @@ import CounterCard from './CounterCard'
 import canteenInfo from './canteenInfo.json'
 import recentViewed from './recentViewed.json'
 import popular from './popular.json'
+import canteenInfo from '../../asset/canteenInfo.json'
 
 const styles = () => ({
     root: {
