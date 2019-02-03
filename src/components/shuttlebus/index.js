@@ -20,10 +20,10 @@ const BusApp = ({classes}) => {
 			</div>
         </div>
     );
+}
 
 BusApp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(BusApp);
-
