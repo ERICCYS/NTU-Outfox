@@ -6,7 +6,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import FunctionCard from '../common/FunctionCard'
 import CounterGrid from './CounterGird'
 import CounterCard from './CounterCard'
-import canteenInfo from './canteenInfo.json'
 import recentViewed from './recentViewed.json'
 import popular from './popular.json'
 import canteenInfo from '../../asset/canteenInfo.json'
@@ -20,6 +19,10 @@ const styles = () => ({
     },
     candiv: {
         marginBottom: 30,
+    },
+    subtitle: {
+        marginBottom: 10,
+        marginLeft: '2%'
     }
 });
 
@@ -54,36 +57,16 @@ const displaySearch = () => {
     )
 }
 
-const displayRecent = () => {
-    let recent = [];
-    canteenInfo.forEach((canteen) => {
-        recent.push(
-            <CounterCard
-                counter={canteen}
-            />
-        )
-    })
-    return recent;
-}
-
-const displayPopular = () => {
-    let popular = [];
-    canteenInfo.forEach((canteen) => {
-
-    })
-    return popular;
-}
-
 const CanteenApp = ({classes}) => (
         <div className={classes.root}>
             <div className={classes.header}>
                 <Typography variant="h3">Welcome to eat @ NTU</Typography>
             </div>
             <div className={classes.candiv}>
-                <Typography variant="h4">Search cantens</Typography>
+                <Typography className={classes.subtitle} variant="h4">Search cantens</Typography>
             </div>
             <div className={classes.candiv}>
-                <Typography variant="h4">Recently Viewed Counters</Typography>
+                <Typography className={classes.subtitle} variant="h4">Recently Viewed Counters</Typography>
                 <Grid className={classes.root} spacing={8} container>
                 {
                     recentViewed.map((counter, index) => (
@@ -97,7 +80,7 @@ const CanteenApp = ({classes}) => (
                 </Grid>
             </div>
             <div className={classes.candiv}>
-                <Typography variant="h4">Popular Counters</Typography>
+                <Typography className={classes.subtitle} variant="h4">Popular Counters</Typography>
                 <Grid className={classes.root} spacing={8} container>
                 {
                     popular.map((counter, index) => (
@@ -111,7 +94,7 @@ const CanteenApp = ({classes}) => (
                 </Grid>
             </div>
             <div className={classes.candiv}>
-                <Typography variant="h4">All cantens</Typography>
+                <Typography className={classes.subtitle} variant="h4">Explore More</Typography>
                 {displayCanteens()}
             </div>
         </div>

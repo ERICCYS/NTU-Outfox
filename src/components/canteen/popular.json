@@ -11,9 +11,9 @@
         "name": "Jiu Li Xiang",
         "canteen": "Canteen 9",
         "canteenStatus": "open",
-        "style": "Japanese",
-        "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_13-2_280x180.png",
-        "status": "crowded"
+        "style": "Chinese,SiChuan",
+        "img": "https://cdn-images-1.medium.com/max/1600/1*-U7Fy39j8YCrLqsooTIKzQ.png",
+        "status": "flooded"
     },
     {
         "name": "Western Food",
