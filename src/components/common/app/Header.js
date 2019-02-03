@@ -112,7 +112,6 @@ class Header extends React.Component {
                             aria-label="Open drawer"
                             onClick={this.handleDrawerOpen}
                             className={classNames(classes.menuButton, open && classes.hide)}
-                            disableFocusRipple
                             disableRipple
                         >
                             <img
