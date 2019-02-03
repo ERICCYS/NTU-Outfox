@@ -1,0 +1,177 @@
+[
+    {
+        "name": "Canteen 13",
+        "status": "closed",
+        "counters": [
+            {
+                "name": "Mixed Veg Rice",
+                "style": "Chinese",
+                "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_14_1_280x180.png",
+                "status": "normal"
+            },
+            {
+                "name": "Menya Takashi",
+                "style": "Japanese",
+                "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/Canteen_13-2_280x180.png",
+                "status": "normal"
+            },
+            {
+                "name": "Western Food",
+                "style": "Western",
+                "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/FoodgleFoodCourt(280x180)(UT).jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Korean Food",
+                "style": "Korean",
+                "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/FC1_280x180).jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Golden Dragon",
+                "style": "Chinese",
+                "img": "http://www.ntu.edu.sg/has/FnB/PublishingImages/koufu-1_280x180.png",
+                "status": "normal"
+            },
+            {
+                "name": "Beaverage",
+                "style": "Sinaporean",
+                "img": "https://ntufood.files.wordpress.com/2012/08/20120810-130854.jpg",
+                "status": "normal"
+            }
+        ]
+    },
+    {
+        "name": "Canteen 14",
+        "status": "open",
+        "counters": [
+            {
+                "name": "Mixed Veg Rice",
+                "style": "Chinese, Sinaporean",
+                "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/AnandaKitchen(280x180_UT).jpg",
+                "status": "flooded"
+            },
+            {
+                "name": "Ban Mian",
+                "style": "Singaporean",
+                "img": "https://fastly.4sqi.net/img/general/200x200/4059313_reTkBbtuBggnTw9ZfXa4qX2DwTICXtdNvMY7xWzLoeM.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Western Food",
+                "style": "Western",
+                "img": "https://i.ytimg.com/vi/G9T3uQT44Nw/hqdefault.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Korean Food",
+                "style": "Korean",
+                "img": "https://sethlui.com/wp-content/uploads/2018/06/NTU-edited-3-1-of-1.jpg",
+                "status": "crowded"
+            },
+            {
+                "name": "Mala Hotpot",
+                "style": "Chinese",
+                "img": "https://farm9.staticflickr.com/8600/16472792469_7b7e1233be_b.jpg",
+                "status": "crowded"
+            },
+            {
+                "name": "Beaverage",
+                "style": "Sinaporean",
+                "img": "https://ntufood.files.wordpress.com/2012/08/20120810-130854.jpg",
+                "status": "normal"
+            }
+        ]
+    },
+    {
+        "name": "Canteen A",
+        "status": "open",
+        "counters": [
+            {
+                "name": "Ban Mian",
+                "style": "Singaporean",
+                "img": "https://fastly.4sqi.net/img/general/200x200/4059313_reTkBbtuBggnTw9ZfXa4qX2DwTICXtdNvMY7xWzLoeM.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Mixed Veg Rice",
+                "style": "Chinese, Sinaporean",
+                "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/AnandaKitchen(280x180_UT).jpg",
+                "status": "crowded"
+            },
+            {
+                "name": "Ban Mian",
+                "style": "Singaporean",
+                "img": "https://fastly.4sqi.net/img/general/200x200/4059313_reTkBbtuBggnTw9ZfXa4qX2DwTICXtdNvMY7xWzLoeM.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Western Food",
+                "style": "Western",
+                "img": "https://i.ytimg.com/vi/G9T3uQT44Nw/hqdefault.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Korean Food",
+                "style": "Korean",
+                "img": "https://sethlui.com/wp-content/uploads/2018/06/NTU-edited-3-1-of-1.jpg",
+                "status": "flooded"
+            },
+            {
+                "name": "Mala Hotpot",
+                "style": "Chinese",
+                "img": "https://farm9.staticflickr.com/8600/16472792469_7b7e1233be_b.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Beaverage",
+                "style": "Sinaporean",
+                "img": "https://ntufood.files.wordpress.com/2012/08/20120810-130854.jpg",
+                "status": "normal"
+            }
+        ]
+    },
+    {
+        "name": "Canteen B",
+        "status": "open",
+        "counters": [
+            {
+                "name": "Mixed Veg Rice",
+                "style": "Chinese, Sinaporean",
+                "img": "http://www.ntu.edu.sg/has/FnB/SiteAssets/Pages/HallCanteens/AnandaKitchen(280x180_UT).jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Ban Mian",
+                "style": "Singaporean",
+                "img": "https://fastly.4sqi.net/img/general/200x200/4059313_reTkBbtuBggnTw9ZfXa4qX2DwTICXtdNvMY7xWzLoeM.jpg",
+                "status": "crowded"
+            },
+            {
+                "name": "Western Food",
+                "style": "Western",
+                "img": "https://i.ytimg.com/vi/G9T3uQT44Nw/hqdefault.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Korean Food",
+                "style": "Korean",
+                "img": "https://sethlui.com/wp-content/uploads/2018/06/NTU-edited-3-1-of-1.jpg",
+                "status": "normal"
+            },
+            {
+                "name": "Mala Hotpot",
+                "style": "Chinese",
+                "img": "https://farm9.staticflickr.com/8600/16472792469_7b7e1233be_b.jpg",
+                "status": "flooded"
+            },
+            {
+                "name": "Beaverage",
+                "style": "Sinaporean",
+                "img": "https://ntufood.files.wordpress.com/2012/08/20120810-130854.jpg",
+                "status": "crowded"
+            }
+        ]
+    }
+
+]

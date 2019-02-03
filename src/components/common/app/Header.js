@@ -1,124 +1,139 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from "@material-ui/core/Toolbar";
-import SearchIcon from "@material-ui/icons/Search"
-import {withStyles} from "@material-ui/core/styles";
-import InputBase from "@material-ui/core/InputBase";
-import {fade} from "@material-ui/core/styles/colorManipulator";
-import Link from "../Link";
-import Grid from "@material-ui/core/Grid/Grid";
-import classNames from "classnames";
+import classNames from 'classnames';
+import {withStyles} from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Link from '../Link';
+import Sidebar from "./Sidebar";
+
+const drawerWidth = 240;
 
 const styles = theme => ({
     root: {
-        flexGrow: 1,
-        zIndex: theme.zIndex.drawer + 1,
-        width: '100%',
+        display: 'flex'
     },
-    grow: {
-        flexGrow: 1,
+    appBar: {
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen
+        })
+    },
+    appBarShift: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen
+        })
+    },
+    menuButton: {
+        marginLeft: 12,
+        marginRight: 20
+    },
+    hide: {
+        display: 'none'
+    },
+    drawer: {
+        width: drawerWidth,
+        flexShrink: 0
+    },
+    drawerPaper: {
+        width: drawerWidth,
+        backgroundColor: theme.palette.grey[50]
+    },
+    drawerHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        padding: '0 8px',
+        ...theme.mixins.toolbar,
+        justifyContent: 'flex-end'
     },
     logo: {
-        marginLeft: 2 * theme.spacing.unit,
-        marginRight: 4 * theme.spacing.unit,
+        marginLeft: -12,
+        marginRight: '8rem',
     },
-    imgContainer: {
-        margin: 'auto',
-        display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing.unit * 3,
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen
+        }),
+        marginLeft: -drawerWidth
+    },
+    contentShift: {
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen
+        }),
+        marginLeft: 0
     },
     img: {
         height: 36,
         '@media (max-width: 840px)': {
-            height: 0,
-        },
+            height: 0
+        }
     },
     headerItem: {
-        marginRight: 20,
-    },
-    search: {
-        position: 'relative',
-        borderRadius: theme.shape.buttonBorderRadius,
-        backgroundColor: fade(theme.palette.common.black, 0.05),
-        '&:hover': {
-            backgroundColor: fade(theme.palette.common.black, 0.1),
-        },
-        marginLeft: 0,
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing.unit,
-            width: 'auto',
-        },
-    },
-    searchIcon: {
-        width: theme.spacing.unit * 9,
-        height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputRoot: {
-        color: 'inherit',
-        width: '100%',
-    },
-    inputInput: {
-        paddingTop: theme.spacing.unit,
-        paddingRight: theme.spacing.unit,
-        paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 120,
-            '&:focus': {
-                width: 200,
-            },
-        },
-    },
+        marginRight: 20
+    }
 });
 
-const header = {
-    name: ['APIs',],
-    url: ['/api',]
-};
+class Header extends React.Component {
+    state = {
+        open: false
+    };
 
-const Header = ({classes}) => (
-    <AppBar className={classes.root} color="default" position="fixed">
-        <Toolbar>
-            <Grid item className={classes.imgContainer}>
-                <img className={classes.img} src={require('../../../asset/logo.svg')} alt={'NTU ---'}/>
-            </Grid>
-            <Link className={classes.logo} aira-label={'Outfox'} href={'/home'} noWrap>
-                Outfox
-            </Link>
-            {header.name.map((item, key) =>
-                <Link key={key} aira-label={item} className={classes.headerItem} to={header.url[key]}
-                      variant={'subtitle1'} noWrap>
-                    {item}
-                </Link>)}
-            <div className={classes.grow}/>
-            <div className={classNames(classes.headerItem, classes.search)}>
-                <div className={classes.searchIcon}>
-                    <SearchIcon/>
-                </div>
-                <InputBase
-                    placeholder="Search…"
-                    classes={{
-                        root: classes.inputRoot,
-                        input: classes.inputInput,
-                    }}
-                />
+    handleDrawerOpen = () => {
+        this.setState({open: true});
+    };
+
+    handleDrawerClose = () => {
+        this.setState({open: false});
+    };
+
+    render() {
+        const {classes} = this.props;
+        const {open} = this.state;
+
+        return (
+            <div className={classes.root}>
+                <AppBar
+                    position="fixed"
+                    className={classNames(classes.appBar, {
+                        [classes.appBarShift]: open
+                    })}
+                >
+                    <Toolbar disableGutters={!open}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="Open drawer"
+                            onClick={this.handleDrawerOpen}
+                            className={classNames(classes.menuButton, open && classes.hide)}
+                            disableFocusRipple
+                            disableRipple
+                        >
+                            <img
+                                className={classes.img}
+                                src={require('../../../asset/logo.svg')}
+                                alt={'Outfox'}
+                            />
+                        </IconButton>
+                        <Link className={classes.logo} aira-label={'Outfox'} href={'/'} noWrap>
+                            Outfox
+                        </Link>
+                    </Toolbar>
+                </AppBar>
+                <Sidebar on={open} handleClose={this.handleDrawerClose}/>
             </div>
-        </Toolbar>
-    </AppBar>
-);
+        );
+    }
+}
 
 Header.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Header);

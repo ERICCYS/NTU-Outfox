@@ -1,18 +1,16 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-
-import RouteWrapper from './routes/RouteWrapper';
-import PageNotFound from './components/common/app/PageNotFound';
-import HomeApp from './components/home/';
-import EventApp from './components/event/';
-import CanteenApp from './components/canteen/';
-import ReportApp from './components/report/';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Header from './components/common/app/Header';
-import Footer from './components/common/app/Footer';
 
-const history = createBrowserHistory();
+import HomeApp from '../components/home';
+import EventApp from '../components/event';
+import CanteenApp from '../components/canteen';
+// import BusApp from '../components/shuttleBus';
+import ReportApp from '../components/report';
+import PageNotFound from '../components/common/app/PageNotFound';
+
+import Header from '../components/common/app/Header';
+import Footer from '../components/common/app/Footer';
 
 const classes = theme => ({
 	root: {
@@ -39,8 +37,9 @@ const RootRouter = ({ classes }) => (
 				<Switch>
 					<Route exact path="/" component={HomeApp} />
 					<Route path="/events" component={EventApp} />
-					<Route path="/report" component={ReportApp} />
+					<Route path="/feedback" component={ReportApp}/>
 					<Route path="/canteen" component={CanteenApp} />
+					{/*<Route path="/bus" component={BusApp} />*/}
 					<Route component={PageNotFound} />
 				</Switch>
 			</main>
