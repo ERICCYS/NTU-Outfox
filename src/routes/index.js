@@ -1,14 +1,14 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
-
 import HomeApp from '../components/home';
 import EventApp from '../components/event';
 import CanteenApp from '../components/canteen';
 // import BusApp from '../components/shuttleBus';
 import ReportApp from '../components/report';
 import PageNotFound from '../components/common/app/PageNotFound';
-
+import SearchResult from '../components/canteen/SearchResultPage';
+import FoodOnTheWay from '../components/canteen/SearchResult';
 import Header from '../components/common/app/Header';
 
 const classes = theme => ({
