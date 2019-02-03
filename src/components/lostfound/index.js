@@ -100,7 +100,7 @@ class LostFoundApp extends React.Component {
                     {console.log(history)}
                     <Button style={{marginRight: 8}} onClick={() => history.push('/lost-and-found/lost')}>Report
                         Lost</Button>
-                    <Button onClick={() => history.push('/lost-and-foundfound/explore')}>Explore</Button>
+                    <Button onClick={() => history.push('/lost-and-found/explore')}>Explore</Button>
                 </Typography>
             </div>
         )
