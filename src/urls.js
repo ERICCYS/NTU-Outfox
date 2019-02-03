@@ -39,7 +39,7 @@ const RootRouter = ({ classes }) => (
 				<Switch>
 					<Route exact path="/" component={HomeApp} />
 					<Route path="/events" component={EventApp} />
-					<Route path="/lostandfound" component={LostFoundApp} />
+					<Route path="/lost-and-found" component={LostFoundApp} />
 					<Route path="/canteen" component={CanteenRouter}/>
 					<Route component={PageNotFound} />
 				</Switch>
